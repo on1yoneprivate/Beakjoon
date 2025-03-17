@@ -1,11 +1,11 @@
 # 10개의 입력값을 배열로 생성
 numbers = [int(input()) for i in range(10)]
 
-remainder = []
+# 중복되는 나머지 값은 한 번만 저장
+remainder = set()
 
-# 중복된 나머지는 remainder 배열에 추가되지 않도록 함
-for i in range(10):
-    if numbers[i]%42 not in remainder:
-        remainder.append(numbers[i]%42)
-
+# 42로 나눈 나머지를 집합에 추가
+for num in numbers:
+    remainder.add(num % 42)
+    
 print(len(remainder))
